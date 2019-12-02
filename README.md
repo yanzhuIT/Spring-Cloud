@@ -13,4 +13,12 @@ A complete reusable Spring Cloud project, including a parent project named micro
 * microservicecloud-provider-dept-hystrix-8001 (submodule): service provider with Hystrix, port is 8001, define fallbackMethod for circuit breaker (in provider), define fallbackFactory for degradation (in consumer, in microservicecloud-api, identify that the service is not available at that time).      
 * microservicecloud-consumer-hystrix-dashboard (submodule): visual interface for service access, port is 9001.  
 * microservicecloud-zuul-gateway-9527 (submodule): gateway service provider, registered in Eureka as a microservice, port is 9527.  
-
+* microservicecloud-config-3344 (submodule): config server, port is 3344, connect with local git repository and remote repository to share dynamic configuration.  
+* microservicecloud-config-3355 (submodule): config client, port is 3355, define bootstrap.yml to track config server 3344, then get git address, then get client config.
+### Test on single machine, need to change system hosts file. C:\Windows\System32\drivers\etc, add below contents:  
+127.0.0.1	eureka7001.com  
+127.0.0.1	eureka7002.com  
+127.0.0.1	eureka7003.com  
+127.0.0.1	myzuul.com  
+127.0.0.1	config-3344.com  
+127.0.0.1	client-config.com  
